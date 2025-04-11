@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro de Usuário</title>
+  <link rel="stylesheet" href="home.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Cadastro de Usuário</h1>
+    <form id="userForm">
+      <label>Nome</label>
+      <input type="text" name="name" placeholder="Nome" required maxlength="100">
+    
+      <label>Email</label>
+      <input type="email" name="email" placeholder="Email" required maxlength="100">
+    
+      <label>Idade</label>
+      <input type="number" name="age" placeholder="Idade" required min="0" max="120">
+    
+      <label>Telefone</label>
+      <input type="text" name="phone" placeholder="Telefone (somente números)" maxlength="15" title="Digite entre 10 e 15 números.">
+    
+      <label>Cidade</label>
+      <input type="text" name="city" placeholder="Cidade" required maxlength="50">
+    
+      <label>Estado</label>
+      <input type="text" name="state" placeholder="Estado" required maxlength="30">
+    
+      <label>País</label>
+      <input type="text" name="country" placeholder="País" required maxlength="30">
+    
+      <label>Função</label>
+      <input type="text" name="role" placeholder="Função" required maxlength="50">
+    
+      <label>Status</label>
+      <input type="text" name="status" placeholder="Status" required maxlength="20">
+    
+      <button type="submit">Cadastrar</button>
+    </form>
+    
+  </div>
+
+  <script>
+    document.getElementById("userForm").addEventListener("submit", async function(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const data = Object.fromEntries(formData.entries());
+      const res = await fetch("http://localhost:3000/users", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        window.location.href = "tabela.html";
+      }
+    });
+  </script>
+</body>
+</html>

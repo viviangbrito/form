@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: mistyrose;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+
+th, td {
+  border: 1px solid rgb(119, 0, 0);
+  padding: 8px;
+  color: rgb(119, 0, 0);
+}
+
+h1 {
+  text-align: center;
+  color: rgb(119, 0, 0);
+}
+
+#userTable th,
+#userTable td {
+  color: rgb(119, 0, 0);
+}
+
+
+
