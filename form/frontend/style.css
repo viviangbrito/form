@@ -26,5 +26,24 @@ h1 {
   color: rgb(119, 0, 0);
 }
 
+nav a {
+  color: rgb(119, 0, 0);
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+nav a:hover {
+  color: rgb(255, 6, 6);
+  text-decoration: underline;
+}
 
 
+nav {
+  background-color:  #fff;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
